@@ -16,7 +16,17 @@ ActiveRecord::Schema.define(version: 2019_03_25_204016) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
+    t.string "name"
     t.string "url"
+    t.string "image1"
+    t.string "image2"
+    t.string "start_date"
+    t.string "start_time"
+    t.string "segment"
+    t.string "genre"
+    t.string "venue"
+    t.string "city"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_204016) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
