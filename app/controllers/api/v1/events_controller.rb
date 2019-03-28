@@ -5,6 +5,11 @@ class Api::V1::EventsController < ApplicationController
     render json: @events
   end
 
+  def show
+    @event = Event.find_by(id: params[:id])
+    render json: @event
+  end
+
   def new
     @event = Event.new
 
@@ -12,6 +17,11 @@ class Api::V1::EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
+  end
+
+  def destroy
+    @event = Event.find_by(id: params[:id])
+    @event.destroy
   end
 
   private
